@@ -1,5 +1,5 @@
 import React from 'react';
-import heroVideo from "../assets/hero_video.mp4"; // Import the video file
+import heroVideo from "../assets/hero_video_blackie.mp4"; // Import the video file
 import appStoreCTA from '../assets/allez assets/apple-store-white.png'
 import playStoreCTA from "../assets/allez assets/google-store-white.png"
 
@@ -33,7 +33,6 @@ const HeroSection = () => {
           <img src={appStoreCTA} alt="" className='w-[200px] hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg'/>
           <img src={playStoreCTA} alt='' className='w-[200px] hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg'/>
         </div>
-        <p className="text-gray-400 mt-2">No credit card required.</p>
       </div>
     </section>
   );

@@ -86,6 +86,7 @@ class ParallaxText extends Component {
           <span className="mr-8 font-bebas text-white">{this.props.children}</span>
           <span className="mr-8 font-bebas text-white">{this.props.children}</span>
           <span className="mr-8 font-bebas text-white">{this.props.children}</span>
+          
         </motion.div>
       </div>
     );
@@ -95,12 +96,12 @@ class ParallaxText extends Component {
 export default class Parallax extends Component {
   render() {
     return (
-      <section className="relative py-20 mt-[30px] mb-[350px] bg-[#1c1b1f]">
-        <ParallaxText baseVelocity={-5}>Access Your Training.</ParallaxText>
-        <ParallaxText baseVelocity={5}>Whenever You Want.</ParallaxText>
+      <section className="relative py-20 mt-[30px] mb-[150px] bg-[#1c1b1f]">
+        <ParallaxText baseVelocity={-3}>Access Your Training.</ParallaxText>
+        <ParallaxText baseVelocity={3}>Whenever You Want.</ParallaxText>
         <p className=" font-montserrat text-gray-300 text-left w-[50%] ml-[35%]">Your Training Journey, Always with You. Access our entire library of badminton, cricket, football, and more programs directly on your mobile device. Download the app, unlock your personalized training plan, and get ready to dominate from anywhere!</p>
-        <img src={appStore} alt="" className="w-[200px] ml-[35%] mt-4 w-[200px] hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg"/>
-        <img src={playStore} alt="" className="w-[200px] ml-[35%] mt-4 w-[200px] hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg"/>
+        <img src={appStore} alt="" className="w-[200px] ml-[35%] mt-4 hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg"/>
+        <img src={playStore} alt="" className="w-[200px] ml-[35%] mt-4 hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg"/>
         <img src={mobile} alt="" className=" absolute top-[-3rem] left-[5%]"/>
       </section>
     );

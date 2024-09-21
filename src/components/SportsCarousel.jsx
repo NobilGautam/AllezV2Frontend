@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import badminton from '../assets/allez assets/1724576671-badminton.png';
 import athletics from '../assets/allez assets/athletics.png';
 import basketball from '../assets/allez assets/basketball.png';
@@ -39,13 +39,13 @@ const SportsCarousel = () => {
       {/* Scrollable Container */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto space-x-8 py-4 scroll-smooth hide-scrollbar w-[90%] mx-auto justify-between"
+        className="flex overflow-x-auto space-x-8 py-4 scroll-smooth hide-scrollbar w-[90%] mx-auto justify-center"
         style={{ scrollSnapType: 'x mandatory' }}
       >
         {sports.map((sport, index) => (
           <div
             key={index}
-            className="flex flex-col items-center space-y-2 text-center hover:scale-105 duration-200"
+            className="group flex flex-col items-center space-y-2 text-center hover:w-[300px] hover:bg-[#1c1b1f] duration-200 bg-[#DC1F2685] w-[150px] px-[10px] py-[46px] rounded-2xl relative"
             style={{ scrollSnapAlign: 'center' }}
           >
             {/* Sport Icon */}
@@ -53,11 +53,13 @@ const SportsCarousel = () => {
               <img
                 src={sport.icon}
                 alt={`${sport.name} icon`}
-                className="w-full h-full object-contain"
+                className={`w-full h-full object-contain ${sport.name == "Badminton" ? 'scale-100' : 'scale-75'}`}
               />
             </div>
-            {/* Sport Name */}
-            <p className="text-lg font-semibold">{sport.name}</p>
+            {/* Sport Name - hidden by default */}
+            <p className="text-lg font-semibold text-white font-montserrat mt-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              {sport.name.toUpperCase()}
+            </p>
           </div>
         ))}
       </div>
