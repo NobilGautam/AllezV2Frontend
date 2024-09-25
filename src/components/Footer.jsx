@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import logo from "../assets/sih_logo (1).png"
+import logo from "../assets/allez assets/logo-icon.svg"
 
 const Footer = () => {
   return (

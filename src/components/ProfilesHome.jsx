@@ -1,88 +1,108 @@
-import React from 'react'
-import { SiCodeblocks } from "react-icons/si";
-import { PiPlant } from "react-icons/pi";
-import { GiMultipleTargets } from "react-icons/gi";
-import basketball from "../assets/ath_basketball.jpeg"
-import volleyball from "../assets/ath_volleyball.jpeg"
-import cricket from "../assets/ath_cricket.jpeg"
-import cricket2 from "../assets/ath_cricket_2.jpeg"
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import coachImage from '../assets/coach.png'; // Use your coach image
 import { Link } from 'react-router-dom';
 
+const coaches = [
+  {
+    id: 1,
+    name: 'Coach 1',
+    description: 'Expert in Football and Basketball, with 10 years of experience.',
+    image: coachImage,
+  },
+  {
+    id: 2,
+    name: 'Coach 2',
+    description: 'Specializes in Volleyball and Badminton with extensive team management experience.',
+    image: coachImage,
+  },
+  {
+    id: 3,
+    name: 'Coach 3',
+    description: 'Focused on track and field sports with a background in Olympic-level coaching.',
+    image: coachImage,
+  },
+  {
+    id: 4,
+    name: 'Coach 4',
+    description: 'Highly skilled in Cricket and Hockey, emphasizing endurance training.',
+    image: coachImage,
+  },
+  {
+    id: 5,
+    name: 'Coach 5',
+    description: 'Football expert with a specialization in forward techniques.',
+    image: coachImage,
+  },
+  {
+    id: 6,
+    name: 'Coach 6',
+    description: 'Specializes in Tennis and long-term athlete development.',
+    image: coachImage,
+  },
+  {
+    id: 7,
+    name: 'Coach 7',
+    description: 'Expert in physical conditioning and Basketball coaching.',
+    image: coachImage,
+  },
+  {
+    id: 8,
+    name: 'Coach 8',
+    description: 'Rugby coach with a focus on strategic team building.',
+    image: coachImage,
+  },
+  {
+    id: 9,
+    name: 'Coach 9',
+    description: 'Highly skilled in athletics and fitness training.',
+    image: coachImage,
+  },
+  {
+    id: 10,
+    name: 'Coach 10',
+    description: 'Volleyball coach with over 15 years of experience.',
+    image: coachImage,
+  },
+  {
+    id: 11,
+    name: 'Coach 11',
+    description: 'Cricket coach with a focus on all-rounder development.',
+    image: coachImage,
+  },
+  {
+    id: 12,
+    name: 'Coach 12',
+    description: 'Professional athlete turned coach, specializing in Hockey.',
+    image: coachImage,
+  },
+];
+
 const ProfilesHome = () => {
-  const athleteData = [
-    {
-      id: "1",
-      name: "Nobil Gautam",
-      sport: "Basketball",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eveniet dolorem, quaerat iure ab cum repudiandae cupiditate soluta harum libero.",
-      img: basketball,
-    },
-    {
-      id: "2",
-      name: "Dhruv Tanwar",
-      sport: "Volleyball",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eveniet dolorem, quaerat iure ab cum repudiandae cupiditate soluta harum libero.",
-      img: cricket2,
-    },
-    {
-      id: "3",
-      name: "Yogen Udar",
-      sport: "Cricket",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eveniet dolorem, quaerat iure ab cum repudiandae cupiditate soluta harum libero.",
-      img: cricket,
-    },
-    {
-      id: "4",
-      name: "Kanupriya",
-      sport: "Volleyball",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus consectetur veritatis at, perspiciatis eligendi pariatur quisquam reprehenderit.",
-      img: volleyball
-    }
-  ]
-
   return (
-    <div className='flex flex-col items-start justify-center py-8 w-[90%] ml-[5%]'>
-      <div className='flex justify-between w-full'>
-        <h1 className='p-2 font-semibold bg-gray-300 rounded-md font-montserrat '>Featured Athletes</h1>
-        <h1 className='font-montserrat font-semibold hover:underline hover:cursor-pointer'>View All</h1>
+    <div className="flex flex-col items-center justify-center py-8 w-[90%] ml-[5%]">
+      {/* Heading and Description */}
+      <div className="text-center">
+        <h1 className="font-montserrat font-black text-4xl">
+          MEET YOUR <span className="text-[#ca2d2e]">TRAINERS</span>
+        </h1>
+        <p className="font-montserrat mt-4">
+          Unleash Your Potential with Our Coaching Champions. Our expert coaches are more than instructors - they are passionate mentors. Explore their profiles, discover their unique coaching styles, and connect with the perfect trainer to ignite your athletic journey.
+        </p>
       </div>
 
-      <div className='flex mt-8 w-full justify-between'>
-        <div className='flex flex-col items-start w-[35%]'>
-          <h1 className='font-bold font-montserrat text-[3.8rem] w-[500px]'>Find the<br/> right trainers.</h1>
-          <p className='font-montserrat text-gray-700 font-semibold text-[1.2rem]'>Unleash your potential with passionate coaching mentors.</p>
-        </div>
-        <div className='flex justify-between w-[60%] gap-4'>
-          <div className='flex flex-col items-center justify-center gap-8 w-[30%]'>
-            <SiCodeblocks className='text-[5rem]'/>
-            <h1 className='text-montserrat font-bold text-[1.2rem] text-center'>Make it difference.<br/> Make it big.</h1>
-          </div>
-          <div className='flex flex-col items-center justify-center gap-8 w-[30%]'>
-            <PiPlant className='text-[5rem]'/>
-            <h1 className='text-montserrat font-bold text-[1.2rem] text-center'>Support your athletes.<br/> They need you.</h1>
-          </div>
-          <div className='flex flex-col items-center justify-center gap-8 w-[30%]'>
-            <GiMultipleTargets className='text-[5rem]'/>
-            <h1 className='text-montserrat font-bold text-[1.2rem] text-center'>Celebrate their milestones.<br/> Track their progress.</h1>
-          </div>
-        </div>
-      </div>
-
-      {/* Swiper Section */}
-      <div className='relative w-full'>
+      {/* Swiper Section for Coaches */}
+      <div className="relative w-full mt-10">
         <Swiper
-          modules={[Navigation, Pagination, A11y]}
-          spaceBetween={20}
-          slidesPerView={3.5}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
+          modules={[Navigation, A11y]}
+          spaceBetween={0}  
+          slidesPerView={5.5}
+          navigation
+          pagination={{ clickable: true }}
           breakpoints={{
             1024: {
               slidesPerView: 3.5,
@@ -95,45 +115,30 @@ const ProfilesHome = () => {
             },
             0: {
               slidesPerView: 1.5,
-            }
+            },
           }}
-          className='w-full relative'
         >
-          {athleteData.map((data, index) => (
-            <SwiperSlide key={index} className='flex justify-center hover:scale-105 duration-300 ease-in-out py-8'>
-              <div className='flex flex-col p-8 gap-2 rounded-md bg-gray-100 shadow-lg hover:scale-105 duration-300 ease-in-out'>
-                <div className='rounded-md overflow-hidden'>
-                  <img src={data.img} alt={data.name} className='object-cover w-full h-[200px]' />
+          {coaches.map((coach) => (
+            <SwiperSlide key={coach.id} className="flex flex-col items-center">
+              <div className="flex flex-col items-center group">
+                <div className="w-[200px] h-[200px] bg-[#1c1b1f] rounded-full p-2 mb-4">
+                  <img src={coach.image} alt={coach.name} className="w-full h-full object-contain rounded-full" />
                 </div>
-                <div>
-                  <h1 className='font-montserrat font-bold text-[1.2rem]'>{data.name}</h1>
-                  <p className='font-montserrat font-semibold'>{data.sport}</p>
-                  <p className='font-montserrat text-[0.9rem] mt-2'>{data.desc}</p>
-                </div>
-                <div className='w-full flex justify-end mt-8'>
-                  <div className='py-2 px-4 rounded-md border bg-gray-200 hover:cursor-pointer hover:bg-[#1C1B1F] duration-300 ease-in-out w-fit hover:text-white'>
-                    <Link to={`/athlete/${data.id}`}><h1 className='font-montserrat font-semibold'>View Profile</h1></Link>
-                  </div>
-                </div>
+                <p className="text-lg font-semibold font-montserrat mt-2 text-center">{coach.name}</p>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Navigation Buttons */}
-        <div className='swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 p-2 text-white bg-[#1C1B1F] rounded-full cursor-pointer z-20 w-10 h-10 flex items-center justify-center'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-        </div>
-        <div className='swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 p-2 text-white bg-[#1C1B1F] rounded-full cursor-pointer z-20 w-10 h-10 flex items-center justify-center'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </div>
       </div>
+
+      {/* View All Button */}
+      <Link to="/trainers">
+        <button className="mt-8 px-6 py-2 font-montserrat font-semibold text-black bg-white border border-[#1c1b1f] hover:border-[#ca2d2e] hover:text-[#ca2d2e] rounded-lg transition-all duration-200">
+          View All
+        </button>
+      </Link>
     </div>
-  )
-}
+  );
+};
 
 export default ProfilesHome;

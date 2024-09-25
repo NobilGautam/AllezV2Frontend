@@ -1,138 +1,123 @@
-import React from 'react'
-import { SiCodeblocks } from "react-icons/si";
-import { PiPlant } from "react-icons/pi";
-import { GiMultipleTargets } from "react-icons/gi";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import cricket from "../assets/cricket.jpeg";
-import basketball from "../assets/basketball.jpeg";
-import volleyball from "../assets/volleyball.jpeg";
-import swimming from "../assets/swimming.jpeg";
+import React, { useRef } from 'react';
+import football from '../assets/football.png';
+import basketball from '../assets/basketball.png';
+import volleyball from '../assets/volleyball.png';
+
+const trainings = [
+  {
+    name: 'FOOTBALL',
+    location: 'Gurugram, Haryana',
+    date: '29 Aug, 2024 - 30 Aug, 2024',
+    icon: football,
+    bgColor: 'bg-[#1c1b1f]', // Dark background for Football
+  },
+  {
+    name: 'BASKETBALL',
+    location: 'Pune, Maharashtra',
+    date: '10 Sept, 2024 - 11 Sept, 2024',
+    icon: basketball,
+    bgColor: 'bg-[#DC1F2685]', // Red background for Basketball
+  },
+  {
+    name: 'VOLLEYBALL',
+    location: 'Chennai, Tamil Nadu',
+    date: '5 Oct, 2024 - 6 Oct, 2024',
+    icon: volleyball,
+    bgColor: 'bg-[#DC1F2685]', // Red background for Volleyball
+  },
+  {
+    name: 'FOOTBALL',
+    location: 'Gurugram, Haryana',
+    date: '29 Aug, 2024 - 30 Aug, 2024',
+    icon: football,
+    bgColor: 'bg-[#1c1b1f]', // Dark background for Football
+  },
+  {
+    name: 'BASKETBALL',
+    location: 'Pune, Maharashtra',
+    date: '10 Sept, 2024 - 11 Sept, 2024',
+    icon: basketball,
+    bgColor: 'bg-[#DC1F2685]', // Red background for Basketball
+  },
+  // Add more items...
+];
 
 const SportsHome = () => {
-    const sportsData = [
-        {
-            img: basketball,
-          sportName: "Basketball",
-          desc: "A fast-paced team sport requiring skill, coordination, and precision to score points by shooting hoops.",
-          athletes: 24,
-          funding: 1500000
-        },
-        {
-            img: volleyball,
-          sportName: "Volleyball",
-          desc: "A dynamic sport focused on teamwork, agility, and strategic play with intense rallies over a net.",
-          athletes: 18,
-          funding: 1000000
-        },
-        {
-            img: cricket,
-          sportName: "Cricket",
-          desc: "A strategic game combining batting, bowling, and fielding with global appeal and competitive formats.",
-          athletes: 30,
-          funding: 2500000
-        },
-        {
-            img: swimming,
-          sportName: "Swimming",
-          desc: "A global sport involving teams aiming to score goals by controlling a ball across a field.",
-          athletes: 35,
-          funding: 4000000
-        },
-      ];
-      
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (direction === 'left') {
+      scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    } else {
+      scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className='flex flex-col items-start justify-center py-8 w-[90%] ml-[5%]'>
-      <div className='flex justify-between w-full'>
-        <h1 className='p-2 font-semibold bg-gray-300 rounded-md font-montserrat '>Featured Sports Categories</h1>
-        <h1 className='font-montserrat font-semibold hover:underline hover:cursor-pointer'>View All</h1>
-      </div>
+    <div className="relative w-full py-8 flex flex-col items-center mb-[200px]">
+      {/* Heading */}
+      <h2 className="font-montserrat text-4xl font-black text-center mb-4">
+        JOIN US NOW FOR <span className="text-[#ca1d2e]">TRAINING</span>
+      </h2>
+      <p className="text-gray-700 text-center w-[80%] mb-8">
+        Join the winning team & unleash your inner athlete! Explore our diverse training programs for badminton, cricket, football, and more! Connect with our experienced coaches who will personalize a plan to unlock your full potential. We can’t wait to welcome you to our supportive environment and witness your journey from aspiring athlete to triumphant competitor!
+      </p>
 
-      <div className='flex mt-8 w-full justify-between'>
-        <div className='flex flex-col items-start w-[35%]'>
-          <h1 className='font-bold font-montserrat text-[4rem] w-[500px]'>Join us now<br/> for training.</h1>
-          <p className='font-montserrat text-gray-700 font-semibold text-[1.2rem]'>Join our training programs to unlock your full athletic potential!</p>
-        </div>
-        <div className='flex justify-between w-[60%] gap-4'>
-          <div className='flex flex-col items-center justify-center gap-8 w-[30%]'>
-            <SiCodeblocks className='text-[5rem]'/>
-            <h1 className='text-montserrat font-bold text-[1.2rem] text-center'>Unlock your potential.<br/> Own the game.</h1>
-          </div>
-          <div className='flex flex-col items-center justify-center gap-8 w-[30%]'>
-            <PiPlant className='text-[5rem]'/>
-            <h1 className='text-montserrat font-bold text-[1.2rem] text-center'>Your journey.<br/> Our coaching.</h1>
-          </div>
-          <div className='flex flex-col items-center justify-center gap-8 w-[30%]'>
-            <GiMultipleTargets className='text-[5rem]'/>
-            <h1 className='text-montserrat font-bold text-[1.2rem] text-center'>Chase greateness.<br/> Achieve victory.</h1>
-          </div>
-        </div>
-      </div>
-
-      {/* Swiper Section */}
-      <div className='relative w-full'>
-        <Swiper
-          modules={[Navigation, Pagination, A11y]}
-          spaceBetween={20}
-          slidesPerView={3.5}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          breakpoints={{
-            1024: {
-              slidesPerView: 3.5,
-            },
-            768: {
-              slidesPerView: 2.5,
-            },
-            425: {
-              slidesPerView: 1.5,
-            },
-            0: {
-              slidesPerView: 1.5,
-            }
-          }}
-          className='w-full relative'
+      {/* Scrollable Cards */}
+      <div className="relative w-full flex items-center justify-center">
+        {/* Scrollable Container */}
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto space-x-8 py-4 h-[350px] scroll-smooth hide-scrollbar w-[90%] mx-auto justify-center"
+          style={{ scrollSnapType: 'x mandatory' }}
         >
-          {sportsData.map((data, index) => (
-            <SwiperSlide key={index} className='flex justify-center hover:scale-105 duration-300 ease-in-out py-8'>
-              <div className='flex flex-col p-8 gap-2 rounded-md bg-gray-100 shadow-lg hover:scale-105 duration-300 ease-in-out'>
-                <div className='rounded-md overflow-hidden'>
-                  <img src={data.img} alt={data.name} className='object-cover w-full h-[200px]' />
-                </div>
-                <div>
-                  <h1 className='font-montserrat font-bold text-[1.2rem]'>{data.name}</h1>
-                  <p className='font-montserrat font-semibold'>{data.sport}</p>
-                  <p className='font-montserrat text-[0.9rem] mt-2'>{data.desc}</p>
-                </div>
-                <div className='w-full flex justify-end mt-8'>
-                  <div className='py-2 px-4 rounded-md border bg-gray-200 hover:cursor-pointer hover:bg-[#1C1B1F] duration-300 ease-in-out w-fit hover:text-white'>
-                    <h1 className='font-montserrat font-semibold'>View programs</h1>
-                  </div>
-                </div>
+          {trainings.map((training, index) => (
+            <div
+              key={index}
+              className={`group flex flex-col items-center text-center hover:bg-[#1c1b1f] transition-all duration-300 ease-in-out transform w-[200px] hover:w-[300px] bg-[#DC1F2685] px-[10px] py-[46px] rounded-2xl relative`}
+              style={{ scrollSnapAlign: 'center' }}
+            >
+              {/* Training Icon */}
+              <div className="w-[150px] h-[150px] mb-4">
+                <img
+                  src={training.icon}
+                  alt={`${training.name} icon`}
+                  className="w-full h-full object-contain"
+                />
               </div>
-            </SwiperSlide>
+              {/* Training Name and Info */}
+              <p className="font-semibold w-full text-left text-white font-montserrat mt-2 hidden transition-opacity duration-300 group-hover:block">
+                {training.name}
+              </p>
+              <p className="text-white w-full text-left font-montserrat hidden transition-opacity duration-300 group-hover:block">
+                {training.location}
+              </p>
+              <p className="text-white w-full text-left font-montserrat hidden transition-opacity duration-300 group-hover:block">
+                {training.date}
+              </p>
+            </div>
           ))}
-        </Swiper>
+        </div>
 
-        {/* Navigation Buttons */}
-        <div className='swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 p-2 text-white bg-[#1C1B1F] rounded-full cursor-pointer z-20 w-10 h-10 flex items-center justify-center'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-        </div>
-        <div className='swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 p-2 text-white bg-[#1C1B1F] rounded-full cursor-pointer z-20 w-10 h-10 flex items-center justify-center'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </div>
+        {/* Scroll Arrows */}
+        <button
+          onClick={() => scroll('left')}
+          className="absolute left-0 z-10 bg-white p-2 w-[40px] font-bold rounded-full shadow-md hover:bg-gray-200 duration-200"
+        >
+          &lt;
+        </button>
+        <button
+          onClick={() => scroll('right')}
+          className="absolute right-0 z-10 bg-white p-2 w-[40px] font-bold rounded-full shadow-md hover:bg-gray-200 duration-200"
+        >
+          &gt;
+        </button>
+      </div>
+      <div className='hover:cursor-pointer mt-10'>
+        <h1 className='font-montserrat px-4 py-2 border-[1px] rounded-xl border-black hover:border-[#ca2d2e] hover:text-[#ca1d2e]'>View All</h1>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SportsHome
+export default SportsHome;

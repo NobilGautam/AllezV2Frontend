@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { motion } from "framer-motion";
 import { wrap } from "@motionone/utils";
-import mobile from '../assets/allez assets/mobile.png';
+import mobile from '../assets/portrait.png';
 import appStore from '../assets/allez assets/apple-store-white.png'
 import playStore from '../assets/allez assets/google-store-white.png'
 
@@ -96,13 +96,16 @@ class ParallaxText extends Component {
 export default class Parallax extends Component {
   render() {
     return (
-      <section className="relative py-20 mt-[30px] mb-[150px] bg-[#1c1b1f]">
+      <section className="relative py-20 mt-[30px] bg-[#1c1b1f]">
         <ParallaxText baseVelocity={-3}>Access Your Training.</ParallaxText>
         <ParallaxText baseVelocity={3}>Whenever You Want.</ParallaxText>
-        <p className=" font-montserrat text-gray-300 text-left w-[50%] ml-[35%]">Your Training Journey, Always with You. Access our entire library of badminton, cricket, football, and more programs directly on your mobile device. Download the app, unlock your personalized training plan, and get ready to dominate from anywhere!</p>
-        <img src={appStore} alt="" className="w-[200px] ml-[35%] mt-4 hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg"/>
-        <img src={playStore} alt="" className="w-[200px] ml-[35%] mt-4 hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg"/>
-        <img src={mobile} alt="" className=" absolute top-[-3rem] left-[5%]"/>
+        {/* <p className=" font-montserrat text-gray-300 text-left w-[50%] ml-[35%]">Your Training Journey, Always with You. Access our entire library of badminton, cricket, football, and more programs directly on your mobile device. Download the app, unlock your personalized training plan, and get ready to dominate from anywhere!</p> */}
+        <p className="font-montserrat font-medium text-2xl text-left ml-[35%] text-white mt-4">Download Our App</p>
+        <div className="flex justify-center gap-4">
+        <img src={appStore} alt="" className="w-[200px] mt-4 hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg"/>
+        <img src={playStore} alt="" className="w-[200px] mt-4 hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg"/>
+        </div>
+        <img src={mobile} alt="" className=" absolute bottom-0 h-[600px] left-[-18%]"/>
       </section>
     );
   }

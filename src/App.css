@@ -30,6 +30,19 @@
   color: #61dafb;
 }
 
+/* More specific targeting of the timeline's line */
+.vertical-timeline::before {
+  background: linear-gradient(to bottom, #34D399, #3B82F6, #F59E0B, #10B981);
+  width: 4px; /* Set the width of the vertical line */
+  top: 0;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  left: 20px;
+}
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -9,6 +9,9 @@ import MobileAppPromo from '../components/MobileAppPromo'
 import Parallax from '../components/Parallax'
 import AboutUs from './AboutUs'
 import AboutUsHome from '../components/AboutUsHome'
+import EcomHome from '../components/EcomHome'
+import FAQs from '../components/FAQs'
+import TournamentsComponent from '../components/TournamentsComponent'
 
 const Home = () => {
   return (
@@ -16,9 +19,12 @@ const Home = () => {
       <HeroSection />
       <SportsCarousel />
       <AboutUsHome />
-      <ProfilesHome />
-      <Parallax />
       <SportsHome />
+      <Parallax />
+      <ProfilesHome />
+      <EcomHome />
+      <TournamentsComponent />
+      <FAQs />
       {/* <MobileAppPromo /> */}
       
     </>
