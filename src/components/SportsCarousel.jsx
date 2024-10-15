@@ -27,7 +27,7 @@ const SportsCarousel = () => {
   };
 
   return (
-    <div className="relative w-full flex items-center justify-center py-8">
+    <div className="relative w-full flex flex-col items-center justify-center py-8">
       {/* Left Arrow */}
       {/* <button
         onClick={() => scroll('left')}
@@ -37,6 +37,7 @@ const SportsCarousel = () => {
       </button> */}
 
       {/* Scrollable Container */}
+      <h1 className='font-montserrat text-2xl'>Explore a diverse range of sports.</h1>
       <div
         ref={scrollRef}
         className="flex overflow-x-auto space-x-8 py-4 scroll-smooth hide-scrollbar w-[90%] mx-auto justify-center"

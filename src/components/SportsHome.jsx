@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import football from '../assets/football.png';
 import basketball from '../assets/basketball.png';
 import volleyball from '../assets/volleyball.png';
-
+import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
 const trainings = [
   {
     name: 'FOOTBALL',
@@ -52,13 +52,16 @@ const SportsHome = () => {
       scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
-
+  const ZoomInScrollOut = batch(ZoomIn(3,1));
   return (
-    <div className="relative w-full py-8 flex flex-col items-center mb-[200px]">
+    <ScrollPage>
+    <div className="relative w-full py-8 mt-8 flex flex-col items-center">
       {/* Heading */}
+      <Animator animation={ZoomInScrollOut}>
       <h2 className="font-montserrat text-4xl font-black text-center mb-4">
         JOIN US NOW FOR <span className="text-[#ca1d2e]">TRAINING</span>
       </h2>
+      </Animator>
       <p className="text-gray-700 text-center w-[80%] mb-8">
         Join the winning team & unleash your inner athlete! Explore our diverse training programs for badminton, cricket, football, and more! Connect with our experienced coaches who will personalize a plan to unlock your full potential. We can’t wait to welcome you to our supportive environment and witness your journey from aspiring athlete to triumphant competitor!
       </p>
@@ -82,17 +85,17 @@ const SportsHome = () => {
                 <img
                   src={training.icon}
                   alt={`${training.name} icon`}
-                  className="w-full h-full object-contain"
+                  className={`w-full h-full object-contain ${training.name === 'FOOTBALL' ? "opacity-30 group-hover:opacity-100" : "opacity-100"}`}
                 />
               </div>
               {/* Training Name and Info */}
-              <p className="font-semibold w-full text-left text-white font-montserrat mt-2 hidden transition-opacity duration-300 group-hover:block">
+              <p className="font-semibold w-full text-white font-montserrat mt-2 hidden transition-opacity duration-300 group-hover:block">
                 {training.name}
               </p>
-              <p className="text-white w-full text-left font-montserrat hidden transition-opacity duration-300 group-hover:block">
+              <p className="text-white w-full font-montserrat hidden transition-opacity duration-300 group-hover:block">
                 {training.location}
               </p>
-              <p className="text-white w-full text-left font-montserrat hidden transition-opacity duration-300 group-hover:block">
+              <p className="text-white w-full font-montserrat hidden transition-opacity duration-300 group-hover:block">
                 {training.date}
               </p>
             </div>
@@ -114,9 +117,10 @@ const SportsHome = () => {
         </button>
       </div>
       <div className='hover:cursor-pointer mt-10'>
-        <h1 className='font-montserrat px-4 py-2 border-[1px] rounded-xl border-black hover:border-[#ca2d2e] hover:text-[#ca1d2e]'>View All</h1>
+        <h1 className='font-montserrat font-semibold px-4 py-2 border-[1px] rounded-xl border-black hover:border-[#ca2d2e] hover:text-[#ca1d2e]'>View All</h1>
       </div>
     </div>
+    </ScrollPage>
   );
 };
 

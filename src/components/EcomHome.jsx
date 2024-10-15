@@ -1,69 +1,73 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import bat from '../assets/bat.png';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-// import required modules
+// Import required modules
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 const EcomHome = () => {
+  const swiperRef = useRef(null); // Use a ref to store the swiper instance
+
   const ecomlist = [
     {
       name: "Cricket Bat",
       company: "TON",
       mrp: "1499",
-      discPrice: "799"
+      discPrice: "799",
     },
     {
       name: "Cricket Bat",
       company: "TON",
       mrp: "1499",
-      discPrice: "799"
+      discPrice: "799",
     },
     {
       name: "Cricket Bat",
       company: "TON",
       mrp: "1499",
-      discPrice: "799"
+      discPrice: "799",
     },
     {
       name: "Cricket Bat",
       company: "TON",
       mrp: "1499",
-      discPrice: "799"
+      discPrice: "799",
     },
     {
       name: "Cricket Bat",
       company: "TON",
       mrp: "1499",
-      discPrice: "799"
+      discPrice: "799",
     },
     {
       name: "Cricket Bat",
       company: "TON",
       mrp: "1499",
-      discPrice: "799"
+      discPrice: "799",
     },
     {
       name: "Cricket Bat",
       company: "TON",
       mrp: "1499",
-      discPrice: "799"
+      discPrice: "799",
     },
     {
       name: "Cricket Bat",
       company: "TON",
       mrp: "1499",
-      discPrice: "799"
+      discPrice: "799",
     },
+    // Add more items as needed...
   ];
 
   return (
-    <div className="bg-[#1c1b1f] px-[5%] py-8">
+    <div className="bg-[#1c1b1f] px-[5%] py-8 relative">
       <div className="flex flex-col items-start mb-8">
         <h1 className="font-montserrat font-black text-4xl text-white">
           CHECK OUR LATEST <span className="text-[#ca2d2e]">PRODUCTS</span>
@@ -76,21 +80,19 @@ const EcomHome = () => {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={"auto"}  // This ensures slides adjust to the size of their content
-        // spaceBetween={30}       // Adjusts space between slides
+        slidesPerView={"auto"}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper; // Store the swiper instance
+          setTimeout(() => {
+            swiper.slideTo(ecomlist.length / 2);
+          }, 0); // Set a timeout to ensure Swiper is fully initialized
+        }}
         coverflowEffect={{
           rotate: 30,
           stretch: 0,
           depth: 100,
           modifier: 4,
           slideShadows: true,
-        }}
-        navigation={{clickable: true}}
-        onSwiper={(swiper) => {
-          // Automatically move to the 5th slide (index 4)
-          setTimeout(() => {
-            swiper.slideTo(ecomlist.length/2);
-          }, 0); // Set a timeout to ensure Swiper is fully initialized
         }}
         modules={[EffectCoverflow, Pagination, Navigation]}
       >
@@ -103,7 +105,7 @@ const EcomHome = () => {
               backgroundSize: 'cover',
               width: '250px',
               height: '500px',
-            }} // Applies the custom styles
+            }}
           >
             <div className="w-full h-[500px] rounded-lg shadow-lg overflow-hidden flex flex-col bg-white">
               <img src={bat} alt={item.name} className="w-full object-contain" />
@@ -114,14 +116,18 @@ const EcomHome = () => {
                   <h1 className="line-through text-gray-400 font-montserrat">₹{item.mrp}</h1>
                   <h1 className="text-[#ca2d2e] font-bold font-montserrat">₹{item.discPrice}</h1>
                 </div>
-                <div className='mt-2'>
-                    <button className='font-montserrat text-sm font-semibold bg-[#ca2d2e] text-white px-4 py-2 rounded-xl'>Grab Now</button>
+                <div className="mt-2">
+                  <button className="font-montserrat text-sm font-semibold bg-[#ca2d2e] text-white px-4 py-2 rounded-xl">Grab Now</button>
                 </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+      
+      {/* Navigation Arrows */}
+      <FaChevronLeft className="absolute left-10 text-[#ca2d2e] text-[3rem] top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={() => swiperRef.current?.slidePrev()} />
+      <FaChevronRight className="absolute right-10 text-[#ca2d2e] text-[3rem] top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={() => swiperRef.current?.slideNext()} />
     </div>
   );
 };

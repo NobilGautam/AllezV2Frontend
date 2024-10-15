@@ -56,7 +56,7 @@ const recentTournaments = [
 
 const TournamentsComponent = () => {
   return (
-    <div className="px-[5%] py-8">
+    <div className="px-[5%] py-8 mb-[]">
       {/* Title Section */}
       <h1 className="font-montserrat text-left font-black text-4xl text-[#ca2d2e]">
         TOURNAMENTS
@@ -73,9 +73,6 @@ const TournamentsComponent = () => {
           <h2 className="font-montserrat font-bold text-xl">
             Pre register for 2025
           </h2>
-          <button className="font-montserrat text-sm text-[#ca2d2e] hover:underline">
-            View All
-          </button>
         </div>
         <div className=''>
             <h1 className='bg-[#ca2d2e] w-fit px-4 py-1 rounded-md font-montserrat font-semibold text-white mt-4'>Featured Trainings</h1>
@@ -102,6 +99,7 @@ const TournamentsComponent = () => {
             </div>
           ))}
         </div>
+        <button className='font-montserrat font-semibold border-[1px] border-black px-4 mt-6 rounded-lg hover:text-[#ca2d2e] hover:border-[#ca2d2e] duration-200'>View All</button>
       </div>
 
       {/* Recent Tournaments and Events Section */}
@@ -110,9 +108,6 @@ const TournamentsComponent = () => {
           <h2 className="font-montserrat font-bold text-xl">
             Recent Tournaments and Events
           </h2>
-          <button className="font-montserrat text-sm text-[#ca2d2e] hover:underline">
-            View All
-          </button>
         </div>
         <div className=''>
             <h1 className='bg-[#ca2d2e] w-fit px-4 py-1 rounded-md font-montserrat font-semibold text-white mt-4'>Featured Events</h1>
@@ -138,7 +133,9 @@ const TournamentsComponent = () => {
               </div>
             </div>
           ))}
+          
         </div>
+        <button className='font-montserrat font-semibold border-[1px] border-black px-4 mt-6 rounded-lg hover:text-[#ca2d2e] hover:border-[#ca2d2e] duration-200'>View All</button>
       </div>
     </div>
   );

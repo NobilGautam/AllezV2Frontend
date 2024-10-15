@@ -40,12 +40,12 @@ const Footer = () => {
       ref={footerRef}
       initial={{ opacity: 0, y: 50 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.5 }}
       className="bg-[#1C1B1F] text-white py-12"
     >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
         {/* Column 1: Logo and Short Description */}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-center">
           <img src={logo} alt="Logo" className="w-[150px]" />
           <p className="text-gray-400">
             Empowering athletes by connecting them with the right opportunities.
@@ -54,14 +54,14 @@ const Footer = () => {
         </div>
 
         {/* Column 2: Navigation Links */}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start justify-start">
           <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
-          <ul className="space-y-2">
-            <li><a href="/products" className="hover:underline">Products</a></li>
-            <li><a href="/solutions" className="hover:underline">Solutions</a></li>
-            <li><a href="/enterprise" className="hover:underline">Enterprise</a></li>
-            <li><a href="/pricing" className="hover:underline">Pricing</a></li>
-            <li><a href="/contact" className="hover:underline">Contact Sales</a></li>
+          <ul className="space-y-2 text-left">
+            <li><a href="/products" className="hover:underline text-left">About Us</a></li>
+            <li><a href="/solutions" className="hover:underline text-left">Privacy Policy</a></li>
+            <li><a href="/enterprise" className="hover:underline text-left">Terms & Conditions</a></li>
+            <li><a href="/pricing" className="hover:underline text-left">Refund & Cancellation</a></li>
+            <li><a href="/contact" className="hover:underline text-left">Customer Care</a></li>
           </ul>
         </div>
 

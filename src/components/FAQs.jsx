@@ -37,8 +37,8 @@ const FAQs = () => {
   };
 
   return (
-    <div className="bg-[#1c1b1f] text-white pb-10">
-      <h2 className="text-[2rem] font-semibold font-montserrat py-10 text-center mb-8 border-t-[1px] border-b-[1px] border-white flex justify-center items-center gap-6 cursor-pointer" onClick={toggleFAQList}>
+    <div className="bg-[#1c1b1f] text-white">
+      <h2 className="text-[2rem] font-semibold font-montserrat py-10 text-center border-t-[1px] border-b-[1px] border-white flex justify-center items-center gap-6 cursor-pointer" onClick={toggleFAQList}>
         F A Q s <span className='text-[1rem]'>{showFAQs ? <FaChevronUp /> : <FaChevronDown />}</span>
       </h2>
 
@@ -49,7 +49,7 @@ const FAQs = () => {
         }`}
       >
         {faqs.map((faq, index) => (
-          <div key={index} className="mb-5 border-b border-gray-700">
+          <div key={index} className="border-b border-gray-700">
             <div
               className="flex justify-between items-center cursor-pointer py-4"
               onClick={() => toggleFAQ(index)}

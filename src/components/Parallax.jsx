@@ -100,7 +100,7 @@ export default class Parallax extends Component {
         <ParallaxText baseVelocity={-3}>Access Your Training.</ParallaxText>
         <ParallaxText baseVelocity={3}>Whenever You Want.</ParallaxText>
         {/* <p className=" font-montserrat text-gray-300 text-left w-[50%] ml-[35%]">Your Training Journey, Always with You. Access our entire library of badminton, cricket, football, and more programs directly on your mobile device. Download the app, unlock your personalized training plan, and get ready to dominate from anywhere!</p> */}
-        <p className="font-montserrat font-medium text-2xl text-left ml-[35%] text-white mt-4">Download Our App</p>
+        <p className="font-montserrat font-semibold text-2xl text-left ml-[35.6%] text-white mt-4">Download Our App</p>
         <div className="flex justify-center gap-4">
         <img src={appStore} alt="" className="w-[200px] mt-4 hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg"/>
         <img src={playStore} alt="" className="w-[200px] mt-4 hover:cursor-pointer hover:scale-105 duration-200 hover:bg-[#222222] hover:bg-opacity-45 rounded-lg"/>

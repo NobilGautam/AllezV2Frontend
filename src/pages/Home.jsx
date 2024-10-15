@@ -12,10 +12,14 @@ import AboutUsHome from '../components/AboutUsHome'
 import EcomHome from '../components/EcomHome'
 import FAQs from '../components/FAQs'
 import TournamentsComponent from '../components/TournamentsComponent'
+import { ScrollContainer } from 'react-scroll-motion'
+import Testimonials from '../components/Testimonials'
+import Blogs from '../components/Blogs'
+import NewsletterHome from '../components/NewsletterHome'
 
 const Home = () => {
   return (
-    <>
+    <ScrollContainer>
       <HeroSection />
       <SportsCarousel />
       <AboutUsHome />
@@ -25,9 +29,12 @@ const Home = () => {
       <EcomHome />
       <TournamentsComponent />
       <FAQs />
+      <Testimonials />
+      <Blogs />
+      <NewsletterHome />
       {/* <MobileAppPromo /> */}
       
-    </>
+    </ScrollContainer>
   )
 }
 
